@@ -18,18 +18,19 @@ ENV ANSIBLE_STDOUT_CALLBACK debug
 
 # Install Ansible, Terraform and Packer in the recommended ways
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
-            apt-get install -y \
-                apt-transport-https \
-                ca-certificates \
-                curl \
-                git \
-                gnupg \
-                lsb-release \
-                software-properties-common \
-                xorriso \
-                wget
-ADD ansible.list /etc/apt/sources.list.d/ansible.list
+RUN apt-get update && \
+        DEBIAN_FRONTEND=noninteractive \
+                apt-get install -y \
+                    apt-transport-https \
+                    ca-certificates \
+                    curl \
+                    git \
+                    gnupg \
+                    lsb-release \
+                    software-properties-common \
+                    xorriso \
+                    wget
+    ADD ansible.list /etc/apt/sources.list.d/ansible.list
 RUN APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367 && \
     wget -O- https://apt.releases.hashicorp.com/gpg | \
         gpg --dearmor | \
