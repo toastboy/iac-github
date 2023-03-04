@@ -47,4 +47,4 @@ RUN APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1 apt-key adv --keyserver keyserver.ubu
 
 # Add Ansible galaxy packages
 
-RUN ansible-galaxy collection install community.general community.crypto ansible.posix
+RUN ansible-galaxy collection install ansible.posix community.crypto community.general pfsensible.core
