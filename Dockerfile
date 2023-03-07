@@ -30,7 +30,7 @@ RUN apt-get update && \
                     software-properties-common \
                     xorriso \
                     wget
-    ADD ansible.list /etc/apt/sources.list.d/ansible.list
+ADD ansible.list /etc/apt/sources.list.d/ansible.list
 RUN APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367 && \
     wget -O- https://apt.releases.hashicorp.com/gpg | \
         gpg --dearmor | \
@@ -47,4 +47,6 @@ RUN APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1 apt-key adv --keyserver keyserver.ubu
 
 # Add Ansible galaxy packages
 
+ADD ansible.cfg /etc/ansible/ansible.cfg
+RUN mkdir -p /ansible_collections && chmod 777 /ansible_collections
 RUN ansible-galaxy collection install ansible.posix community.crypto community.general pfsensible.core
