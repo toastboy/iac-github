@@ -3,7 +3,7 @@
 
 # Owes a debt to https://github.com/geektechdude/ansible_container/blob/master/Dockerfile
 
-FROM ubuntu:jammy
+FROM ubuntu:22.04
 
 USER root
 
