@@ -20,5 +20,5 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ghcr.io/${{ github.repository }}/iac-github:latest
-          platforms: linux/arm64/v8,linux/amd64
+          tags: ghcr.io/${{ github.repository }}:latest
+          platforms: linux/arm64,linux/amd64
