@@ -9,12 +9,12 @@ USER root
 
 # Set some Ansible defaults
 
-ENV ANSIBLE_GATHERING smart
-ENV ANSIBLE_HOST_KEY_CHECKING False
-ENV ANSIBLE_RETRY_FILES_ENABLED False
-ENV ANSIBLE_ROLES_PATH /ansible/playbooks/roles
-ENV ANSIBLE_SSH_PIPELINING True
-ENV ANSIBLE_STDOUT_CALLBACK debug
+ENV ANSIBLE_GATHERING=smart
+ENV ANSIBLE_HOST_KEY_CHECKING=False
+ENV ANSIBLE_RETRY_FILES_ENABLED=False
+ENV ANSIBLE_ROLES_PATH=/ansible/playbooks/roles
+ENV ANSIBLE_SSH_PIPELINING=True
+ENV ANSIBLE_STDOUT_CALLBACK=debug
 
 # Install Ansible, Terraform and Packer in the recommended ways
 
@@ -49,4 +49,4 @@ RUN APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1 && \
 
 ADD ansible.cfg /etc/ansible/ansible.cfg
 RUN mkdir -p /ansible_collections && chmod 777 /ansible_collections
-RUN ansible-galaxy collection install ansible.posix community.crypto community.general pfsensible.core
+RUN ansible-galaxy collection install ansible.posix community.crypto community.general pfsensible.core onepassword.connect
