@@ -28,8 +28,9 @@ RUN apt-get update && \
     gnupg \
     lsb-release \
     software-properties-common \
-    xorriso \
-    wget && \
+    unzip \
+    wget \
+    xorriso && \
     apt-add-repository ppa:ansible/ansible
 RUN APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1 && \
     wget -O- https://apt.releases.hashicorp.com/gpg | \
