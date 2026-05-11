@@ -3,7 +3,7 @@
 
 # Owes a debt to https://github.com/geektechdude/ansible_container/blob/master/Dockerfile
 
-FROM ubuntu:24.04
+FROM ubuntu:26.04
 
 USER root
 
